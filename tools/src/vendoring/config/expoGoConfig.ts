@@ -30,21 +30,22 @@ const config: VendoringTargetConfig = {
             '"${PODS_ROOT}/Stripe/Stripe3DS2" "${PODS_ROOT}/Headers/Public/Stripe"';
         },
       },
-      // android: {
-      //   excludeFiles: [
-      //     'android/src/main/java/com/reactnativestripesdk/GooglePayButtonManager.kt',
-      //     'android/src/main/java/com/reactnativestripesdk/GooglePayButtonView.kt',
-      //   ],
-      //   transforms: {
-      //     content: [
-      //       {
-      //         paths: 'StripeSdkPackage.kt',
-      //         find: /, GooglePayButtonManager\(\)/,
-      //         replaceWith: '',
-      //       },
-      //     ],
-      //   },
-      // },
+      android: {
+        excludeFiles: [
+          'android/src/main/java/com/reactnativestripesdk/GooglePayButtonManager.kt',
+          'android/src/main/java/com/reactnativestripesdk/GooglePayButtonView.kt',
+          'android/src/main/res/drawable-[a-z][a-z]/**',
+        ],
+        transforms: {
+          content: [
+            {
+              paths: 'StripeSdkPackage.kt',
+              find: /,\s*GooglePayButtonManager\(\)/,
+              replaceWith: '',
+            },
+          ],
+        },
+      },
     },
     'lottie-react-native': {
       source: 'https://github.com/lottie-react-native/lottie-react-native.git',
