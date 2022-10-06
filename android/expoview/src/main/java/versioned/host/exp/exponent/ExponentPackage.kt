@@ -9,6 +9,9 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ViewManager
 import com.shopify.reactnative.flash_list.ReactNativeFlashListPackage
 import com.shopify.reactnative.skia.RNSkiaPackage
+import com.swmansion.rnscreens.RNScreensPackage
+import com.swmansion.gesturehandler.RNGestureHandlerPackage
+import com.swmansion.gesturehandler.react.RNGestureHandlerModule
 import expo.modules.adapters.react.ReactModuleRegistryProvider
 import expo.modules.core.interfaces.Package
 import expo.modules.core.interfaces.SingletonModule
@@ -26,8 +29,6 @@ import org.json.JSONException
 import versioned.host.exp.exponent.modules.api.*
 import versioned.host.exp.exponent.modules.api.cognito.RNAWSCognitoModule
 import versioned.host.exp.exponent.modules.api.components.datetimepicker.RNDateTimePickerPackage
-import versioned.host.exp.exponent.modules.api.components.gesturehandler.react.RNGestureHandlerModule
-import versioned.host.exp.exponent.modules.api.components.gesturehandler.RNGestureHandlerPackage
 import versioned.host.exp.exponent.modules.api.components.lottie.LottiePackage
 import versioned.host.exp.exponent.modules.api.components.maps.MapsPackage
 import versioned.host.exp.exponent.modules.api.components.maskedview.RNCMaskedViewPackage
@@ -43,7 +44,6 @@ import versioned.host.exp.exponent.modules.api.components.webview.RNCWebViewPack
 import versioned.host.exp.exponent.modules.api.netinfo.NetInfoModule
 import versioned.host.exp.exponent.modules.api.notifications.NotificationsModule
 import versioned.host.exp.exponent.modules.api.safeareacontext.SafeAreaContextPackage
-import versioned.host.exp.exponent.modules.api.screens.RNScreensPackage
 import versioned.host.exp.exponent.modules.api.viewshot.RNViewShotModule
 import versioned.host.exp.exponent.modules.internal.DevMenuModule
 import versioned.host.exp.exponent.modules.test.ExponentTestNativeModule

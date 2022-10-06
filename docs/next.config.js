@@ -9,6 +9,7 @@ import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
 import remarkMDXFrontmatter from 'remark-mdx-frontmatter';
 import semver from 'semver';
 
+import remarkCodeTitle from './mdx-plugins/remark-code-title.js';
 import remarkCreateStaticProps from './mdx-plugins/remark-create-static-props.js';
 import remarkExportHeadings from './mdx-plugins/remark-export-headings.js';
 import remarkLinkRewrite from './mdx-plugins/remark-link-rewrite.js';
@@ -32,10 +33,19 @@ logInfo(`Copied latest Expo SDK version from v${version}`);
 /** @type {import('next').NextConfig}  */
 export default {
   trailingSlash: true,
-  experimental: { esmExternals: true },
+  experimental: {
+    esmExternals: true,
+  },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  compiler: { emotion: true },
+  compiler: {
+    emotion: true,
+    reactRemoveProperties: true,
+    removeConsole: {
+      exclude: ['error'],
+    },
+  },
   swcMinify: true,
+  poweredByHeader: false,
   webpack: (config, options) => {
     // Add support for MDX with our custom loader
     config.module.rules.push({
@@ -53,6 +63,7 @@ export default {
               [remarkMdxDisableExplicitJsx, { whiteList: ['kbd'] }],
               remarkFrontmatter,
               [remarkMDXFrontmatter, { name: 'meta' }],
+              remarkCodeTitle,
               remarkExportHeadings,
               remarkLinkRewrite,
               [remarkCreateStaticProps, `{ meta: meta || {}, headings: headings || [] }`],
@@ -70,6 +81,7 @@ export default {
   },
 
   // Create a map of all pages to export
+  // https://nextjs.org/docs/api-reference/next.config.js/exportPathMap
   async exportPathMap(defaultPathMap, { dev, outDir }) {
     if (dev) {
       return defaultPathMap;
