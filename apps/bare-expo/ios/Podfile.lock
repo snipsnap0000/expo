@@ -171,7 +171,7 @@ PODS:
   - ExpoImage (0.2.3):
     - ExpoModulesCore
     - React-Core
-    - SDWebImage (~> 5.0)
+    - SDWebImage (~> 5.13)
     - SDWebImageSVGKitPlugin (~> 1.3)
     - SVGKit (~> 2.1)
   - ExpoImageManipulator (10.4.0):
@@ -1266,7 +1266,7 @@ SPEC CHECKSUMS:
   ExpoClipboard: 596aa4a0f894fbdddc985dc3d2e0e7efeb8ca973
   ExpoCrypto: e2678609304ec063a0e36b826a3c2d0f0d7202c0
   ExpoHaptics: 7a9709f4310b577d1dd68d8839b95df1e2419cde
-  ExpoImage: 219eb2d8b6952861c7d351c5dd86d45b0584be08
+  ExpoImage: db07fa9522f7702aefb5050b29d361d910194ad5
   ExpoImageManipulator: 7154a74e021bdc08810e54d87adaac947ee3dff8
   ExpoImagePicker: 5935667c6a0b5e6f5ca7c0a09f2f7a40f5ee8be2
   ExpoKeepAwake: 49bcb2ce587a75f876ff0777b80fd6803e6cbb46
