@@ -54,14 +54,14 @@ export function logCmdError(error: Error): never {
   } else if (
     error instanceof CommandError ||
     error instanceof AssertionError ||
-    error.name === 'ApiV2Error'
+    error.name === 'ApiV2Error' ||
+    error.name === 'ConfigError'
   ) {
     // Print the stack trace in debug mode only.
     exit(error);
   }
 
-  // @ts-ignore note(simek): Ignore unknown `isConfigError` field to avoid importing `ConfigError` class (CLI perf).
-  const errorDetails = error.stack && !error?.isConfigError ? '\n' + chalk.gray(error.stack) : '';
+  const errorDetails = error.stack ? '\n' + chalk.gray(error.stack) : '';
 
   exit(chalk.red(error.toString()) + errorDetails);
 }
