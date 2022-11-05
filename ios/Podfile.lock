@@ -2007,9 +2007,6 @@ PODS:
     - Firebase/Core (= 9.5.0)
   - EXFont (11.0.1):
     - ExpoModulesCore
-  - EXGL (12.0.0):
-    - ExpoModulesCore
-    - React-jsi
   - EXImageLoader (4.0.0):
     - ExpoModulesCore
     - React-Core
@@ -2047,6 +2044,9 @@ PODS:
     - ExpoModulesTestCore
   - ExpoCrypto (12.0.0):
     - ExpoModulesCore
+  - ExpoGL (12.0.0):
+    - ExpoModulesCore
+    - ReactCommon
   - ExpoHaptics (12.0.1):
     - ExpoModulesCore
   - ExpoImageManipulator (11.0.0):
@@ -2670,6 +2670,25 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.70.4)
   - React-runtimeexecutor (0.70.4):
     - React-jsi (= 0.70.4)
+  - ReactCommon (0.70.4):
+    - React-logger (= 0.70.4)
+    - ReactCommon/react_debug_core (= 0.70.4)
+    - ReactCommon/turbomodule (= 0.70.4)
+  - ReactCommon/react_debug_core (0.70.4):
+    - React-logger (= 0.70.4)
+  - ReactCommon/turbomodule (0.70.4):
+    - DoubleConversion
+    - glog
+    - RCT-Folly (= 2021.07.22.00)
+    - React-bridging (= 0.70.4)
+    - React-callinvoker (= 0.70.4)
+    - React-Core (= 0.70.4)
+    - React-cxxreact (= 0.70.4)
+    - React-jsi (= 0.70.4)
+    - React-logger (= 0.70.4)
+    - React-perflogger (= 0.70.4)
+    - ReactCommon/turbomodule/core (= 0.70.4)
+    - ReactCommon/turbomodule/samples (= 0.70.4)
   - ReactCommon/turbomodule/core (0.70.4):
     - DoubleConversion
     - glog
@@ -2681,6 +2700,18 @@ PODS:
     - React-jsi (= 0.70.4)
     - React-logger (= 0.70.4)
     - React-perflogger (= 0.70.4)
+  - ReactCommon/turbomodule/samples (0.70.4):
+    - DoubleConversion
+    - glog
+    - RCT-Folly (= 2021.07.22.00)
+    - React-bridging (= 0.70.4)
+    - React-callinvoker (= 0.70.4)
+    - React-Core (= 0.70.4)
+    - React-cxxreact (= 0.70.4)
+    - React-jsi (= 0.70.4)
+    - React-logger (= 0.70.4)
+    - React-perflogger (= 0.70.4)
+    - ReactCommon/turbomodule/core (= 0.70.4)
   - RNFlashList (1.3.1):
     - React-Core
   - RNGestureHandler (2.8.0):
@@ -3106,7 +3137,6 @@ DEPENDENCIES:
   - EXFirebaseAnalytics (from `../packages/expo-firebase-analytics/ios`)
   - EXFirebaseCore (from `../packages/expo-firebase-core/ios`)
   - EXFont (from `../packages/expo-font/ios`)
-  - EXGL (from `../packages/expo-gl`)
   - EXImageLoader (from `../packages/expo-image-loader/ios`)
   - EXJSONUtils (from `../packages/expo-json-utils/ios`)
   - EXJSONUtils/Tests (from `../packages/expo-json-utils/ios`)
@@ -3125,6 +3155,7 @@ DEPENDENCIES:
   - ExpoClipboard (from `../packages/expo-clipboard/ios`)
   - ExpoClipboard/Tests (from `../packages/expo-clipboard/ios`)
   - ExpoCrypto (from `../packages/expo-crypto/ios`)
+  - ExpoGL (from `../packages/expo-gl`)
   - ExpoHaptics (from `../packages/expo-haptics/ios`)
   - ExpoImageManipulator (from `../packages/expo-image-manipulator/ios`)
   - ExpoImagePicker (from `../packages/expo-image-picker/ios`)
@@ -3962,8 +3993,6 @@ EXTERNAL SOURCES:
     :path: "../packages/expo-firebase-core/ios"
   EXFont:
     :path: "../packages/expo-font/ios"
-  EXGL:
-    :path: "../packages/expo-gl"
   EXImageLoader:
     :path: "../packages/expo-image-loader/ios"
   EXJSONUtils:
@@ -3994,6 +4023,8 @@ EXTERNAL SOURCES:
     :path: "../packages/expo-clipboard/ios"
   ExpoCrypto:
     :path: "../packages/expo-crypto/ios"
+  ExpoGL:
+    :path: "../packages/expo-gl"
   ExpoHaptics:
     :path: "../packages/expo-haptics/ios"
   ExpoImageManipulator:
@@ -4506,7 +4537,6 @@ SPEC CHECKSUMS:
   EXFirebaseAnalytics: 58d70e698859b070b2450ad8664d7b5bc6c6e3e1
   EXFirebaseCore: d0d88cb904e893af07f809ab08c0892489bc6956
   EXFont: 319606bfe48c33b5b5063fb0994afdc496befe80
-  EXGL: 2ddfb92926ffa55e62e2e00584f6fb6336f81cd2
   EXImageLoader: 84b65e6bd9d3345d6fbb3ab936a546c54496a64d
   EXJSONUtils: 09aef2c1fba1a116ca8c73a2c8299aac00d96b43
   EXLocalAuthentication: 78cc5a00b13745b41d16d189ab332b61a01299f9
@@ -4522,6 +4552,7 @@ SPEC CHECKSUMS:
   ExpoCellular: 851660eb7a461d5b11889e537e3a8be4b20fc088
   ExpoClipboard: 334921ae215b4be261e393e6fdd9050025008a20
   ExpoCrypto: 51e7662c7f5bfeab25b7909b8a5d545ec15d4877
+  ExpoGL: 981a10c8170b9f6d35fc51f59c817164d079ba31
   ExpoHaptics: 5a56d30a87ea213dd00b09566dc4b441a4dff97f
   ExpoImageManipulator: 5f3c1ab8dd81de11491b5051bb925abc91fe57e4
   ExpoImagePicker: 735000e53b06c327a4e8b1146f06a8765be244c3
@@ -4529,7 +4560,7 @@ SPEC CHECKSUMS:
   ExpoLinearGradient: b40c2133ad57ae105b1b12a319e314463c817f6b
   ExpoLocalization: e202d1e2a4950df17ac8d0889d65a1ffd7532d7e
   ExpoMailComposer: 5bd9a732104eb1721a5aa4744903673787d1410c
-  ExpoModulesCore: 137a16fd1f4a27e80ce58231022537a7bbe69fba
+  ExpoModulesCore: e47e5d3e3f8fbc03b6c41cfc1d54421381201dd5
   ExpoModulesTestCore: fe0a7344268158f254dadc9ac947b2c66bb19fed
   ExpoRandom: 58b7e0a5fe1adf1cb6dc1cbe503a6fe9524f36ce
   ExpoStoreReview: ff6d631f2949eb7e4b2d14146ef6af25a16d770d
