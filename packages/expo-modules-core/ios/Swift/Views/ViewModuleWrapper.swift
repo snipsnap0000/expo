@@ -119,6 +119,9 @@ public final class ViewModuleWrapper: RCTViewManager, DynamicModuleWrapperProtoc
         try? prop.set(value: value, onView: view)
       }
     }
+    if let view = view as? AnySwiftUIHostingView {
+      view.setRawProps(json)
+    }
     viewManager.callLifecycleMethods(withType: .didUpdateProps, forView: view)
   }
 
